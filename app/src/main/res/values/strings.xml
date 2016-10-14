@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">CoderTMDb</string>
+    <string name="no_movie_reviews_to_display">No Movie Reviews to display</string>
 </resources>
