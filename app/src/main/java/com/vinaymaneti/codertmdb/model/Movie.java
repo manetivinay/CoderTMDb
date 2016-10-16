@@ -24,7 +24,7 @@ public class Movie implements Parcelable {
     @SerializedName("genre_ids")
     private String[] genreIds;
     @SerializedName("id")
-    private int id;
+    private long id;
     @SerializedName("original_title")
     private String originalTitle; // film name
     @SerializedName("original_language")
@@ -47,7 +47,7 @@ public class Movie implements Parcelable {
         overview = in.readString();
         releaseDate = in.readString();
         genreIds = in.createStringArray();
-        id = in.readInt();
+        id = in.readLong();
         originalTitle = in.readString();
         originalLanguage = in.readString();
         title = in.readString();
@@ -94,7 +94,7 @@ public class Movie implements Parcelable {
         return genreIds;
     }
 
-    public int getId() {
+    public long getId() {
         return id;
     }
 
@@ -162,7 +162,7 @@ public class Movie implements Parcelable {
         dest.writeString(overview);
         dest.writeString(releaseDate);
         dest.writeStringArray(genreIds);
-        dest.writeInt(id);
+        dest.writeLong(id);
         dest.writeString(originalTitle);
         dest.writeString(originalLanguage);
         dest.writeString(title);

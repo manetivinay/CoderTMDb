@@ -1,131 +1,136 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                xmlns:tools="http://schemas.android.com/tools"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-
-    <android.support.v7.widget.AppCompatImageView
-        android:id="@+id/landscapeModePosterIV"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:adjustViewBounds="true"
-        android:scaleType="fitCenter"
-        tools:src="@drawable/landscape_poster_cover"/>
-
-    <android.support.v7.widget.AppCompatTextView
-        android:id="@+id/originalTitle"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/landscapeModePosterIV"
-        android:layout_margin="5dp"
-        android:gravity="center"
-        android:padding="5dp"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        tools:text="Original title of the film"/>
-
-    <android.support.v7.widget.AppCompatTextView
-        android:id="@+id/descriptionTv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/originalTitle"
-        android:padding="5dp"
-        android:textSize="14sp"/>
-
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
     <RelativeLayout
-        android:id="@+id/subRelativeLayout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/descriptionTv">
+        android:layout_height="match_parent">
 
-        <!-- An invisible view aligned to the center of the parent. Allows other
-        views to be arranged on either side -->
-        <View
-            android:id="@+id/centerShim"
-            android:layout_width="0dp"
+
+        <android.support.v7.widget.AppCompatImageView
+            android:id="@+id/landscapeModePosterIV"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignBottom="@+id/popularityIconIv"
+            android:adjustViewBounds="true"
+            android:scaleType="fitCenter"
+            tools:src="@drawable/landscape_poster_cover"/>
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/originalTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/landscapeModePosterIV"
+            android:layout_margin="5dp"
+            android:gravity="center"
+            android:padding="5dp"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            tools:text="Original title of the film"/>
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/descriptionTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/originalTitle"
+            android:padding="5dp"
+            android:textSize="14sp"/>
+
+
+        <RelativeLayout
+            android:id="@+id/subRelativeLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/descriptionTv">
+
+            <!-- An invisible view aligned to the center of the parent. Allows other
+            views to be arranged on either side -->
+            <View
+                android:id="@+id/centerShim"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/popularityIconIv"
+                android:layout_centerHorizontal="true"
+                android:visibility="invisible"/>
+
+            <android.support.v7.widget.AppCompatImageView
+                android:id="@+id/popularityIconIv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_margin="5dp"
+                android:padding="5dp"
+
+                android:src="@drawable/ic_person_outline_black_24dp"/>
+
+            <android.support.v7.widget.AppCompatTextView
+                android:id="@+id/popularityTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/popularityIconIv"
+                android:layout_alignTop="@id/popularityIconIv"
+                android:layout_marginRight="5dp"
+                android:layout_toLeftOf="@id/centerShim"
+                android:layout_toRightOf="@id/popularityIconIv"
+                android:gravity="center|left"
+                android:textSize="18sp"
+                tools:text="12334"/>
+
+            <android.support.v7.widget.AppCompatImageView
+                android:id="@+id/voteCountIv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:layout_toRightOf="@id/centerShim"
+                android:padding="5dp"
+                android:src="@drawable/ic_thumb_up_black_24dp"/>
+
+            <android.support.v7.widget.AppCompatTextView
+                android:id="@+id/voteCountTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/voteCountIv"
+                android:layout_alignTop="@id/voteCountIv"
+                android:layout_marginRight="5dp"
+                android:layout_toRightOf="@id/voteCountIv"
+                android:gravity="center|left"
+                android:textSize="18sp"
+                tools:text="12334"/>
+
+        </RelativeLayout>
+
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/releaseDateTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/subRelativeLayout"
+            android:padding="5dp"
+            android:text="Release Date :-"
+            android:textSize="16sp"/>
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/releaseDateLabel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/subRelativeLayout"
+            android:layout_marginRight="5dp"
+            android:layout_toRightOf="@id/releaseDateTv"
+            android:padding="5dp"
+            android:text=""
+            android:textSize="16sp"/>
+
+
+        <RatingBar
+            android:id="@+id/ratingBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/releaseDateLabel"
             android:layout_centerHorizontal="true"
-            android:visibility="invisible"/>
-
-        <android.support.v7.widget.AppCompatImageView
-            android:id="@+id/popularityIconIv"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
             android:layout_margin="5dp"
-            android:padding="5dp"
+            android:numStars="5"/>
 
-            android:src="@drawable/ic_person_outline_black_24dp"/>
-
-        <android.support.v7.widget.AppCompatTextView
-            android:id="@+id/popularityTextView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignBottom="@id/popularityIconIv"
-            android:layout_alignTop="@id/popularityIconIv"
-            android:layout_marginRight="5dp"
-            android:layout_toLeftOf="@id/centerShim"
-            android:layout_toRightOf="@id/popularityIconIv"
-            android:gravity="center|left"
-            android:textSize="18sp"
-            tools:text="12334"/>
-
-        <android.support.v7.widget.AppCompatImageView
-            android:id="@+id/voteCountIv"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:layout_toRightOf="@id/centerShim"
-            android:padding="5dp"
-            android:src="@drawable/ic_thumb_up_black_24dp"/>
-
-        <android.support.v7.widget.AppCompatTextView
-            android:id="@+id/voteCountTextView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignBottom="@id/voteCountIv"
-            android:layout_alignTop="@id/voteCountIv"
-            android:layout_marginRight="5dp"
-            android:layout_toRightOf="@id/voteCountIv"
-            android:gravity="center|left"
-            android:textSize="18sp"
-            tools:text="12334"/>
 
     </RelativeLayout>
-
-
-    <android.support.v7.widget.AppCompatTextView
-        android:id="@+id/releaseDateTv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/subRelativeLayout"
-        android:padding="5dp"
-        android:text="Release Date :-"
-        android:textSize="16sp"/>
-
-    <android.support.v7.widget.AppCompatTextView
-        android:id="@+id/releaseDateLabel"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/subRelativeLayout"
-        android:layout_marginRight="5dp"
-        android:layout_toRightOf="@id/releaseDateTv"
-        android:padding="5dp"
-        android:text=""
-        android:textSize="16sp"/>
-
-
-    <RatingBar
-        android:id="@+id/ratingBar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/releaseDateLabel"
-        android:layout_centerHorizontal="true"
-        android:layout_margin="5dp"
-        android:numStars="5"/>
-
-
-</RelativeLayout>
+</ScrollView>

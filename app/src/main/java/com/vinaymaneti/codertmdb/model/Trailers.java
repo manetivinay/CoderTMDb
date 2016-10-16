@@ -11,14 +11,14 @@ import com.google.gson.annotations.SerializedName;
 
 public class Trailers implements Parcelable {
     @SerializedName("id")
-    private int id;
+    private long id;
     @SerializedName("quicktime")
     private String[] quicktime;
     @SerializedName("youtube")
     private Youtube[] youtube;
 
     protected Trailers(Parcel in) {
-        id = in.readInt();
+        id = in.readLong();
         quicktime = in.createStringArray();
         youtube = in.createTypedArray(Youtube.CREATOR);
     }
@@ -35,7 +35,7 @@ public class Trailers implements Parcelable {
         }
     };
 
-    public int getId() {
+    public long getId() {
         return id;
     }
 
@@ -54,7 +54,7 @@ public class Trailers implements Parcelable {
 
     @Override
     public void writeToParcel(Parcel dest, int flags) {
-        dest.writeInt(id);
+        dest.writeLong(id);
         dest.writeStringArray(quicktime);
         dest.writeTypedArray(youtube, flags);
     }

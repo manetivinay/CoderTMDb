@@ -91,7 +91,7 @@ public class MovieAdapter extends ArrayAdapter<Movie> {
         return convertView;
     }
 
-    private void getValuesFromMovieBackDrop(final BackDropViewHolder backDropViewHolder, Movie movie, final int position) {
+    private void getValuesFromMovieBackDrop(final BackDropViewHolder backDropViewHolder, final Movie movie, final int position) {
         backDropViewHolder.mTitleBackdropTv.setText(movie.getOriginalTitle());
         Glide.with(getContext())
                 .load(movie.getBackdropPath())
@@ -108,7 +108,9 @@ public class MovieAdapter extends ArrayAdapter<Movie> {
             @Override
             public void onClick(View v) {
                 backDropViewHolder.mPlayIconIv.setVisibility(View.GONE);
-                getContext().startActivity(new Intent(getContext(), PlayVideo.class));
+                Intent intent = new Intent(getContext(), PlayVideo.class);
+                intent.putExtra("id", movie.getId());
+                getContext().startActivity(intent);
             }
         });
     }

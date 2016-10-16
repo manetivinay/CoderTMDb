@@ -1,39 +1,68 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    android:id="@+id/activity_main"
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="horizontal"
-    tools:context="com.vinaymaneti.codertmdb.activity.MainActivity">
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="8dp">
 
-    <android.support.v7.widget.AppCompatImageView
-        android:id="@+id/ivPoster"
-        android:layout_width="0dp"
-        android:layout_height="150dp"
-        android:layout_weight="1"
-        android:src="@drawable/landscape_poster_cover"/>
-
-    <LinearLayout
+    <!-- An invisible view aligned to the center of the parent. Allows other
+    views to be arranged on either side -->
+    <View
+        android:id="@+id/centerShim"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:orientation="vertical">
+        android:layout_alignBottom="@+id/ivPoster"
+        android:layout_centerHorizontal="true"
+        android:visibility="invisible"/>
 
-        <android.support.v7.widget.AppCompatTextView
-            android:id="@+id/tvOriginalTitle"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textStyle="bold"
-            tools:text="The Magnificent Seven"/>
+    <!--Set width to match_parent sets maximum width. alignParentLeft aligns
+    the left edge of this view with the left edge of its parent. toLeftOf
+    sets the right edge of this view to align with the left edge of the
+    given view. The result of all three settings is that this view will
+    always take up exactly half of the width of its parent, however wide
+    that may be. -->
+    <android.support.v7.widget.AppCompatImageView
+        android:id="@+id/ivPoster"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_toLeftOf="@+id/centerShim"
+        android:adjustViewBounds="false"
+        android:background="@drawable/image_view_boarder"
+        android:scaleType="fitXY"
+        android:src="@drawable/landscape_poster_cover"/>
 
-        <android.support.v7.widget.AppCompatTextView
-            android:id="@+id/tvOverview"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            tools:text="A big screen remake of John Sturges' classic western The Magnificent Seven, itself a remake of Akira Kurosawa's Seven Samurai. Seven gun men in the old west gradually come together to help a poor village against savage thieves"/>
+    <!--Same deal, but on the right -->
+    <android.support.v7.widget.AppCompatTextView
+        android:id="@+id/tvOriginalTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="8dp"
+        android:layout_toRightOf="@+id/centerShim"
+        android:padding="2dp"
+        android:textStyle="bold"
+        tools:text="The Magnificent Seven"/>
 
-    </LinearLayout>
+    <android.support.v7.widget.AppCompatButton
+        android:id="@+id/btnMore"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/ivPoster"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:text="More"/>
 
-</LinearLayout>
+    <android.support.v7.widget.AppCompatTextView
+        android:id="@+id/tvOverview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvOriginalTitle"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_toRightOf="@+id/centerShim"
+        android:ellipsize="end"
+        android:maxLines="5"
+        android:padding="2dp"
+        android:scrollbars="vertical"
+        android:textSize="12sp"
+        tools:text="A big screen remake of John Sturges' classic western The Magnificent Seven, itself a remake of Akira Kurosawa's Seven Samurai. Seven gun men in the old west gradually come together to help a poor village against savage thieves bbdshbdjbfjsdbfjdbsj bjhsdbfjdhsbjf   bfdsbfjkdbkfd dfbsdbfbdkfdksj dfbjkdsbfkdfkdkfjkjdsfkjdkfdskfdfkjdkjskhdjbfjdhsjfjsvvfjdjsdvvsd"/>
+</RelativeLayout>
