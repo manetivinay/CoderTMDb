@@ -40,7 +40,7 @@ The following **additional** features are implemented:
 
 Here's a walkthrough of implemented user stories:
 
-<img src='http://i.giphy.com/3oI9JzOz2m9QY4pBsI.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='coderTMDb.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
