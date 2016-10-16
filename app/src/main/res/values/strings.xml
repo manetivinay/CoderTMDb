@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">CoderTMDb</string>
     <string name="no_movie_reviews_to_display">No Movie Reviews to display</string>
+    <string name="play_error">Error initializing YouTube player</string>
 </resources>
